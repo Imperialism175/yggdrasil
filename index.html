@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sydney · Иггдрасиль</title>
+  <meta name="description" content="Сидней. Личный сайт: спуск по Мировому древу от кроны под северным сиянием до корней у источника Урд.">
+  <meta name="theme-color" content="#060a18">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600&family=Noto+Sans+Runic&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./vendor/three/three.module.min.js",
+        "three/addons/": "./vendor/three/addons/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#about">к содержимому</a>
+
+  <!-- 3D world (fixed behind the page) -->
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__rune">ᛃ</div>
+    <p>Древо растёт…</p>
+  </div>
+
+  <main class="story">
+
+    <section class="chapter chapter--hero" id="top" data-realm="Крона · Над миром" data-side="center">
+      <div class="hero">
+        <p class="hero__runes" id="heroRunes" aria-hidden="true">ᛊᛃᛞᚾᛖᛃ</p>
+        <h1 class="hero__name" id="heroName">Sydney</h1>
+        <div class="divider" aria-hidden="true"><span></span><i></i><span></span></div>
+        <p class="hero__sub" id="heroSub">Сидней · она / любые</p>
+        <p class="hero__lead" id="heroLead">Ты стоишь у кроны Иггдрасиля, под северным сиянием. Спускайся: сквозь ветви, облака и Мидгард, вниз к корням, где Норны прядут нити.</p>
+        <a class="hero__hint" href="#about">
+          <span class="hero__arrow" aria-hidden="true"></span>
+          листай, чтобы спуститься
+        </a>
+      </div>
+    </section>
+
+    <section class="chapter" id="about" data-realm="Асгард · Знакомство" data-side="left">
+      <div class="panel">
+        <p class="kicker"><span class="rune" aria-hidden="true">ᛗ</span> Глава I · Асгард</p>
+        <h2 id="aboutTitle">Привет, я Сидней</h2>
+        <div id="aboutText">
+          <p>Я собираю красивое: звуки, слова, странные мысли в три часа ночи.</p>
+          <p>Здесь нет ленты и лайков. Только то, что мне правда дорого.</p>
+        </div>
+        <dl class="facts" id="facts">
+          <div><dt>где</dt><dd>где-то между ветвями и экраном</dd></div>
+          <div><dt>местоимения</dt><dd>она / любые</dd></div>
+          <div><dt>любимый час</dt><dd>золотой, перед закатом</dd></div>
+        </dl>
+        <div class="block">
+          <h3>kin-list</h3>
+          <ul class="kin" id="kin">
+            <li><b>Vine Staff</b> <span>Phighting!</span></li>
+            <li><b>d3rLord3</b> <span>WTDNE</span></li>
+            <li><b>dragondudes3</b> <span>RAHH</span></li>
+            <li><b>Flowery</b> <span>Deltarune</span></li>
+          </ul>
+        </div>
+        <div class="block">
+          <h3>психологический портрет</h3>
+          <p class="mono" id="portrait">[LII] INTP · 6w7 so/sp 683 · so6w7–so8w7–sp3w4 · LVFE ≈ LVEF · сангвиник-флегматик с холерическим акцентом</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter chapter--branches" id="branches" data-realm="Ветви · Что растёт" data-side="right">
+      <header class="panel panel--slim">
+        <p class="kicker"><span class="rune" aria-hidden="true">ᛇ</span> Глава II · Ветви</p>
+        <h2 id="intTitle">Что растёт на моих ветвях</h2>
+        <p class="quiet" id="intSub">спускаюсь по стволу, увлечения расходятся в стороны</p>
+      </header>
+      <div class="cards" id="cards">
+        <article class="card">
+          <span class="card__rune" aria-hidden="true">ᛚ</span>
+          <p class="card__num">01</p>
+          <h3>Музыка</h3>
+          <p>Плейлисты под настроение, долгие альбомы целиком и песни, которые звучат как лето.</p>
+          <ul class="tags"><li>dream pop</li><li>shoegaze</li><li>саундтреки</li></ul>
+        </article>
+        <article class="card">
+          <span class="card__rune" aria-hidden="true">ᛈ</span>
+          <p class="card__num">02</p>
+          <h3>Игры</h3>
+          <p>Уютные миры, где можно просто гулять, и истории, после которых долго молчишь.</p>
+          <ul class="tags"><li>инди</li><li>атмосферные</li><li>кооп</li></ul>
+        </article>
+        <article class="card">
+          <span class="card__rune" aria-hidden="true">ᛊ</span>
+          <p class="card__num">03</p>
+          <h3>Фото</h3>
+          <p>Ловлю свет: блики на стекле, тени листьев на стене, небо в контровом солнце.</p>
+          <ul class="tags"><li>плёнка</li><li>макро</li><li>закаты</li></ul>
+        </article>
+        <article class="card">
+          <span class="card__rune" aria-hidden="true">ᚷ</span>
+          <p class="card__num">04</p>
+          <h3>Друзья</h3>
+          <p>Те, которым я могу сказать о себе самое плохое.</p>
+          <ul class="tags"><li>дружба</li><li>веселье</li><li>атмосфера</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="chapter chapter--quote" id="clouds" data-realm="Сквозь облака" data-side="center">
+      <blockquote class="quote">
+        <p id="quoteText">Даже самое большое дерево растёт тихо. Нужно просто замедлиться, чтобы услышать.</p>
+        <footer>Глава III · Сквозь облака</footer>
+      </blockquote>
+    </section>
+
+    <section class="chapter" id="now" data-realm="Мидгард · Прямо сейчас" data-side="left">
+      <div class="panel panel--board">
+        <p class="kicker"><span class="rune" aria-hidden="true">ᛟ</span> Глава IV · Мидгард</p>
+        <h2 id="nowTitle">Рунные камни</h2>
+        <p class="quiet">камни можно двигать</p>
+        <div class="board" id="board">
+          <div class="stone" style="--r:2deg">
+            <p class="stone__label">играю</p>
+            <p class="stone__value">The Elder Scrolls V: Skyrim</p>
+          </div>
+          <div class="stone" style="--r:-1.5deg">
+            <p class="stone__label">настроение</p>
+            <p class="stone__value">тихое, как туман у корней</p>
+          </div>
+          <div class="stone" style="--r:3deg">
+            <p class="stone__label">статус</p>
+            <p class="stone__value">поливаю мысли из источника Урд</p>
+          </div>
+          <div class="stone stone--count" style="--r:-2deg">
+            <p class="stone__label">рун в источнике</p>
+            <p class="stone__value"><span id="runeCount">0</span> ᛟ</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="thread" data-realm="Нить Норн · Имя" data-side="right">
+      <div class="panel panel--thread">
+        <p class="kicker"><span class="rune" aria-hidden="true">ᚾ</span> Глава V · Нить Норн</p>
+        <h2 id="threadTitle">Имя, которое я выбрала сама</h2>
+        <div id="threadText">
+          <p>У корней Иггдрасиля три Норны прядут нити судеб. Говорят, их узор нельзя переплести. Я переплела.</p>
+          <p>Я транс-девушка (MTF). Сидней: это не псевдоним и не роль, это я. Видишь светящуюся нить, что обвивает ствол? Она шла с тобой всю дорогу от кроны, золотая.</p>
+        </div>
+        <div class="flag" role="img" aria-label="цвета транс-флага">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <p class="quiet" id="threadNote">Древо тоже сбрасывает старую кору. И от этого только растёт.</p>
+      </div>
+    </section>
+
+    <section class="chapter chapter--well" id="well" data-realm="Источник Урд · Вести" data-side="center">
+      <div class="panel panel--wide">
+        <p class="kicker"><span class="rune" aria-hidden="true">ᚱ</span> Глава VI · Источник Урд</p>
+        <h2 id="wellTitle">Ты дошёл(-шла) до корней</h2>
+        <p id="wellText">Белка Рататоск всю дорогу бегала по стволу с вестями. Отправь со мной свою:</p>
+        <nav class="links" id="links" aria-label="контакты">
+          <a href="https://t.me/flowertalkerr" target="_blank" rel="noopener">Telegram ↗</a>
+          <a href="https://steamcommunity.com/id/flowertalkerr/" target="_blank" rel="noopener">Steam ↗</a>
+          <a href="https://discord.com/channels/@me/846417638111314001" target="_blank" rel="noopener">Discord ↗</a>
+          <a href="https://github.com/Imperialism175" target="_blank" rel="noopener">GitHub ↗</a>
+        </nav>
+        <button class="drop" id="dropRune" type="button">
+          <span aria-hidden="true">ᛟ</span> бросить руну в источник
+        </button>
+      </div>
+      <footer class="foot">
+        <span>© 2026 Sydney</span>
+        <a href="#top">наверх, к кроне ↑</a>
+      </footer>
+    </section>
+  </main>
+
+  <!-- Ratatoskr progress rail -->
+  <nav class="rail" id="rail" aria-label="миры древа">
+    <div class="rail__line"><div class="rail__fill" id="railFill"></div></div>
+    <div class="rail__marks" id="railMarks"></div>
+    <div class="rail__squirrel" id="squirrel" title="Рататоск">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path class="sq-tail" d="M12 25C5 25 2 19 4 13 6 7 13 5 17 9c2 2 1 6-2 6-2 0-3-2-2-3"/>
+        <path class="sq-body" d="M14 26c0-5 2-9 6-10l1-4c0-2 1-3 3-3l1-2 1 2c2 1 3 3 2 5l-2 2c1 3 1 7-1 10z"/>
+        <circle class="sq-eye" cx="25" cy="11" r=".9"/>
+      </svg>
+    </div>
+  </nav>
+
+  <p class="hud" id="hud" aria-live="polite">Крона · Над миром</p>
+
+  <script src="content.js"></script>
+  <script src="ui.js"></script>
+  <script src="admin.js"></script>
+  <script type="module" src="scene.js"></script>
+</body>
+</html>
